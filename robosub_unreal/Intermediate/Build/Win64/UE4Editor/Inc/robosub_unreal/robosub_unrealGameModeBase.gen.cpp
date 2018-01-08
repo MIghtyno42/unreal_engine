@@ -6,7 +6,6 @@
 
 #include "GeneratedCppIncludes.h"
 #include "robosub_unrealGameModeBase.h"
-PRAGMA_DISABLE_OPTIMIZATION
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -28,38 +27,43 @@ void EmptyLinkFunctionForGeneratedCoderobosub_unrealGameModeBase() {}
 	}
 	UClass* Z_Construct_UClass_Arobosub_unrealGameModeBase()
 	{
-		static UClass* OuterClass = NULL;
+		static UClass* OuterClass = nullptr;
 		if (!OuterClass)
 		{
-			Z_Construct_UClass_AGameModeBase();
-			Z_Construct_UPackage__Script_robosub_unreal();
-			OuterClass = Arobosub_unrealGameModeBase::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= (EClassFlags)0x20900288u;
-
-
-				static TCppClassTypeInfo<TCppClassTypeTraits<Arobosub_unrealGameModeBase> > StaticCppClassTypeInfo;
-				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
-				OuterClass->StaticLink();
+			static UObject* (*const DependentSingletons[])() = {
+				(UObject* (*)())Z_Construct_UClass_AGameModeBase,
+				(UObject* (*)())Z_Construct_UPackage__Script_robosub_unreal,
+			};
 #if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation"));
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("robosub_unrealGameModeBase.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("robosub_unrealGameModeBase.h"));
-				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+			static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+				{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
+				{ "IncludePath", "robosub_unrealGameModeBase.h" },
+				{ "ModuleRelativePath", "robosub_unrealGameModeBase.h" },
+				{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
+			};
 #endif
-			}
+			static const FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
+				TCppClassTypeTraits<Arobosub_unrealGameModeBase>::IsAbstract,
+			};
+			static const UE4CodeGen_Private::FClassParams ClassParams = {
+				&Arobosub_unrealGameModeBase::StaticClass,
+				DependentSingletons, ARRAY_COUNT(DependentSingletons),
+				0x00900288u,
+				nullptr, 0,
+				nullptr, 0,
+				nullptr,
+				&StaticCppClassTypeInfo,
+				nullptr, 0,
+				METADATA_PARAMS(Class_MetaDataParams, ARRAY_COUNT(Class_MetaDataParams))
+			};
+			UE4CodeGen_Private::ConstructUClass(OuterClass, ClassParams);
 		}
-		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(Arobosub_unrealGameModeBase, 2130897759);
+	IMPLEMENT_CLASS(Arobosub_unrealGameModeBase, 2871634013);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_Arobosub_unrealGameModeBase(Z_Construct_UClass_Arobosub_unrealGameModeBase, &Arobosub_unrealGameModeBase::StaticClass, TEXT("/Script/robosub_unreal"), TEXT("Arobosub_unrealGameModeBase"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(Arobosub_unrealGameModeBase);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #ifdef _MSC_VER
 #pragma warning (pop)
 #endif
-PRAGMA_ENABLE_OPTIMIZATION

@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\robosub_unreal.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{F1105E8F-7EBE-468C-9EE7-B5565A6B588F}</UniqueIdentifier>
+			<UniqueIdentifier>{1A1089F3-391E-445E-9FD5-F2C387B65E3C}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\robosub_unreal.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{43CEAE0B-820E-420D-8F20-4F094921E466}</UniqueIdentifier>
+			<UniqueIdentifier>{0ECDBBE8-35AC-4D53-8F9E-AF23D1674C1F}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -25,7 +25,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\robosub_unreal">
-			<UniqueIdentifier>{9218F3DB-2B3D-40C4-8138-1AFFB6911DEA}</UniqueIdentifier>
+			<UniqueIdentifier>{525C409A-E940-45C5-B3A7-EEF759EC0915}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\robosub_unreal\robosub_unreal.Build.cs">
 			<Filter>Source\robosub_unreal</Filter>

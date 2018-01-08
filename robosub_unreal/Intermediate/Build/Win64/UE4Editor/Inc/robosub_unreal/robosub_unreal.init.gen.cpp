@@ -5,7 +5,6 @@
 ===========================================================================*/
 
 #include "GeneratedCppIncludes.h"
-PRAGMA_DISABLE_OPTIMIZATION
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -17,15 +16,15 @@ void EmptyLinkFunctionForGeneratedCoderobosub_unreal_init() {}
 		static UPackage* ReturnPackage = nullptr;
 		if (!ReturnPackage)
 		{
-			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), nullptr, FName(TEXT("/Script/robosub_unreal")), false, false));
-			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
-			FGuid Guid;
-			Guid.A = 0x7FAECD65;
-			Guid.B = 0x93190E77;
-			Guid.C = 0x00000000;
-			Guid.D = 0x00000000;
-			ReturnPackage->SetGuid(Guid);
-
+			static const UE4CodeGen_Private::FPackageParams PackageParams = {
+				"/Script/robosub_unreal",
+				PKG_CompiledIn | 0x00000000,
+				0x19FAA165,
+				0x93190E77,
+				nullptr, 0,
+				METADATA_PARAMS(nullptr, 0)
+			};
+			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);
 		}
 		return ReturnPackage;
 	}
@@ -33,4 +32,3 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #ifdef _MSC_VER
 #pragma warning (pop)
 #endif
-PRAGMA_ENABLE_OPTIMIZATION

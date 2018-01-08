@@ -1,9 +1,7 @@
 {
-	"Changelist" : 3658906,
-	"CompatibleChangelist" : 3573198,
-	"BuildId" : "7d5229ac-d3e2-4191-ac6f-9a43d8706aee",
-	"Modules" : 
+	"BuildId": "3709383",
+	"Modules": 
 	{
-		"robosub_unreal" : "UE4Editor-robosub_unreal-9155.dll"
+		"robosub_unreal": "UE4Editor-robosub_unreal.dll"
 	}
 }
