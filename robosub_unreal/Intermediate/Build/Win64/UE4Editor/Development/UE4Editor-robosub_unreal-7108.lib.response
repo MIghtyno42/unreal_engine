@@ -1,0 +1,18 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-robosub_unreal-7108.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Program Files\Epic Games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h.obj"
+"D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\robosub_unreal\Leviathan.cpp.obj"
+"D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\robosub_unreal\robosub_unreal.cpp.obj"
+"D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\robosub_unreal\robosub_unrealGameModeBase.cpp.obj"
+"D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\robosub_unreal\Leviathan.gen.cpp.obj"
+"D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\robosub_unreal\robosub_unreal.init.gen.cpp.obj"
+"D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\robosub_unreal\robosub_unrealGameModeBase.gen.cpp.obj"
+"C:\Program Files\Epic Games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\robosub_unreal\PCLaunch.rc.res"
+"C:\Program Files\Epic Games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\ModuleVersionResource.rc.inl.res"
+/OUT:"D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal-7108.lib"

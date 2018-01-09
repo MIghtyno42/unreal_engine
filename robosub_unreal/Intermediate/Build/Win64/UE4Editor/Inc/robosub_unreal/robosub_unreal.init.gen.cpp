@@ -19,8 +19,8 @@ void EmptyLinkFunctionForGeneratedCoderobosub_unreal_init() {}
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/robosub_unreal",
 				PKG_CompiledIn | 0x00000000,
-				0x19FAA165,
-				0x93190E77,
+				0x22CBD3DF,
+				0xBD0212A2,
 				nullptr, 0,
 				METADATA_PARAMS(nullptr, 0)
 			};
