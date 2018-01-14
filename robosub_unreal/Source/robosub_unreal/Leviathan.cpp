@@ -31,7 +31,7 @@ ALeviathan::ALeviathan()
 		//SphereVisual->SetStaticMesh(SphereVisualAsset.Object);
 		SphereVisual->SetStaticMesh(Asset);
 
-		SphereVisual->SetRelativeLocation(FVector(0.0f, 0.0f, 90.0f));
+		//SphereVisual->SetRelativeLocation(FVector(0.0f, 0.0f, 90.0f));
 		//SphereVisual->SetWorldScale3D(FVector(0.8f));
 	}
 
