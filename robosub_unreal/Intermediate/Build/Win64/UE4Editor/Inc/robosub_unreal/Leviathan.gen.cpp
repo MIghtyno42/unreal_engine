@@ -41,6 +41,16 @@ void EmptyLinkFunctionForGeneratedCodeLeviathan() {}
 				{ "ModuleRelativePath", "Leviathan.h" },
 			};
 #endif
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam NewProp_movementSpeed_MetaData[] = {
+				{ "Category", "Sub" },
+				{ "ModuleRelativePath", "Leviathan.h" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFloatPropertyParams NewProp_movementSpeed = { UE4CodeGen_Private::EPropertyClass::Float, "movementSpeed", RF_Public|RF_Transient|RF_MarkAsNative, 0x0010000000000005, 1, nullptr, STRUCT_OFFSET(ALeviathan, movementSpeed), METADATA_PARAMS(NewProp_movementSpeed_MetaData, ARRAY_COUNT(NewProp_movementSpeed_MetaData)) };
+			static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[] = {
+				(const UE4CodeGen_Private::FPropertyParamsBase*)&NewProp_movementSpeed,
+			};
 			static const FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 				TCppClassTypeTraits<ALeviathan>::IsAbstract,
 			};
@@ -49,7 +59,7 @@ void EmptyLinkFunctionForGeneratedCodeLeviathan() {}
 				DependentSingletons, ARRAY_COUNT(DependentSingletons),
 				0x00900080u,
 				nullptr, 0,
-				nullptr, 0,
+				PropPointers, ARRAY_COUNT(PropPointers),
 				nullptr,
 				&StaticCppClassTypeInfo,
 				nullptr, 0,
@@ -59,7 +69,7 @@ void EmptyLinkFunctionForGeneratedCodeLeviathan() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ALeviathan, 996646995);
+	IMPLEMENT_CLASS(ALeviathan, 852815185);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ALeviathan(Z_Construct_UClass_ALeviathan, &ALeviathan::StaticClass, TEXT("/Script/robosub_unreal"), TEXT("ALeviathan"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ALeviathan);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

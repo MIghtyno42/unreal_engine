@@ -16,15 +16,15 @@
 	},
 	"BuildProducts": [
 		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-robosub_unreal-2382.dll",
+			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-robosub_unreal-7841.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-robosub_unreal-2382.pdb",
+			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-robosub_unreal-7841.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-robosub_unreal-2382.lib",
+			"Path": "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-robosub_unreal-7841.lib",
 			"Type": "ImportLibrary"
 		},
 		{

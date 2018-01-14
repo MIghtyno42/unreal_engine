@@ -31,7 +31,7 @@ ALeviathan::ALeviathan()
 		//SphereVisual->SetStaticMesh(SphereVisualAsset.Object);
 		SphereVisual->SetStaticMesh(Asset);
 
-		//SphereVisual->SetRelativeLocation(FVector(0.0f, 0.0f, -40.0f));
+		SphereVisual->SetRelativeLocation(FVector(0.0f, 0.0f, 90.0f));
 		//SphereVisual->SetWorldScale3D(FVector(0.8f));
 	}
 
@@ -48,26 +48,69 @@ ALeviathan::ALeviathan()
 	// Create a camera and attach to our spring arm
 	UCameraComponent* Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("ActualCamera"));
 	Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
+	reset = true;
 }
 
 // Called when the game starts or when spawned
 void ALeviathan::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	targetLinear.X = 10;
 }
+
+
 
 // Called every frame
 void ALeviathan::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if (reset) {
+		FVector start(0);
+		SetActorLocation(start, false);
+		UE_LOG(LogTemp, Warning, TEXT("Robosub Reset"));
+		reset = false;
+	}
+	FVector newLocation = location;
+	if (targetLinear.X != location.X) {
+		UE_LOG(LogTemp, Warning, TEXT("Moving X %f"), movementSpeed * DeltaTime);
+		newLocation.X += movementSpeed * DeltaTime;
+	}
 
+	if (targetLinear.Y != location.Y) {
+		newLocation.Y += movementSpeed * DeltaTime;
+	}
+
+	if (targetLinear.Z != location.Z) {
+		newLocation.Z += movementSpeed * DeltaTime;
+	}
+	SetActorLocation(newLocation, true);
+	location = GetActorLocation();
 }
 
-// Called to bind functionality to input
-void ALeviathan::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
+void ALeviathan::tripReset() {
+	reset = true;
 }
 
+FVector ALeviathan::getLocation() {
+	return location;
+}
+
+void ALeviathan::setXTarget(float x) {
+	targetLinear.X = x;
+}
+void ALeviathan::setYTarget(float y) {
+	targetLinear.Y = y;
+}
+void ALeviathan::setZTarget(float z) {
+	targetLinear.Z = z;
+}
+
+void ALeviathan::setRollTarget(float r) {
+	targetRotation.X = r;
+}
+void ALeviathan::setPitchTarget(float p) {
+	targetRotation.Y = p;
+}
+void ALeviathan::setYawTarget(float y) {
+	targetRotation.Z = y;
+}
