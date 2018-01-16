@@ -74,3 +74,5 @@ Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 *.log
+catkin_ws/build/*
+catkin_ws/devel/*
