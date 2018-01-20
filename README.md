@@ -13,7 +13,9 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 * Unreal 4.18
-* Visual Studios, or Clion with additional [setup](https://blog.jetbrains.com/clion/2016/10/clion-and-ue4/) 
+* Visual Studios, or Clion with additional [setup](https://blog.jetbrains.com/clion/2016/10/clion-and-ue4/)
+* Redis 3.2.11 [setup](https://redis.io/download)
+* Ros Kinetic [setup](http://wiki.ros.org/kinetic)
 
 ### Installing
 
@@ -37,7 +39,7 @@ Currently [Cody Constine](https://github.com/Wofisdk)
 
 ## Authors
 
-* **[Cody Constine](https://github.com/Wofisdk)** 
+* **[Cody Constine](https://github.com/Wofisdk)**
 * **[Michael Min](https://github.com/MIghtyno42)**
 * **[Hunter Haskins](https://github.com/HunterHaskins)**
 * **[Peter Young](https://github.com/peyo9164)**

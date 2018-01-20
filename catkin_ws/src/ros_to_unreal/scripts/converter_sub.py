@@ -6,11 +6,7 @@ import math
 import tf
 import time
 import numpy as np
-from std_msgs.msg import *
-from nav_msgs.msg import *
-from sensor_msgs.msg import *
-from geometry_msgs.msg import *
-from rosgraph_msgs.msg import *
+from std_msgs.msg import Float64
 import redis
 
 r = redis.Redis(
