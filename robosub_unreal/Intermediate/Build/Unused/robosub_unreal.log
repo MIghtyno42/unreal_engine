@@ -1,13 +1,20 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build.
   Compiling game modules for hot reload
+  Performing full C++ include scan (no include cache file)
   Parsing headers for robosub_unrealEditor
     Running UnrealHeaderTool "D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\robosub_unreal.uproject" "D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\robosub_unrealEditor\Development\robosub_unrealEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for robosub_unrealEditor in 7.7536119 seconds
-  Performing 3 actions (4 in parallel)
+  Reflection code generated for robosub_unrealEditor in 8.0790535 seconds
+  Performing 9 actions (4 in parallel)
+  SharedPCH.Engine.cpp
   Leviathan.cpp
-  [2/3] Link UE4Editor-robosub_unreal-7841.dll
-  [3/3] Link UE4Editor-robosub_unreal-7841.lib
-     Creating library D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal-7841.lib and object D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal-7841.exp
-     Creating library D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal-7841.suppressed.lib and object D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal-7841.suppressed.exp
+  robosub_unreal.cpp
+  robosub_unrealGameModeBase.cpp
+  Leviathan.gen.cpp
+  robosub_unreal.init.gen.cpp
+  robosub_unrealGameModeBase.gen.cpp
+  [8/9] Link UE4Editor-robosub_unreal-5376.dll
+  [9/9] Link UE4Editor-robosub_unreal-5376.lib
+     Creating library D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal-5376.suppressed.lib and object D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal-5376.suppressed.exp
+     Creating library D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal-5376.lib and object D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal-5376.exp
   Deploying robosub_unrealEditor Win64 Development...
-  Total build time: 14.29 seconds (Local executor: 1.42 seconds)
+  Total build time: 39.69 seconds (Local executor: 26.09 seconds)

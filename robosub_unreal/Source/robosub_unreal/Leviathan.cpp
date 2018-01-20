@@ -23,18 +23,17 @@ ALeviathan::ALeviathan()
 	UStaticMesh* Asset = MeshAsset.Object;
 
 	// Create and position a mesh component so we can see where our sphere is
-	UStaticMeshComponent* SphereVisual = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualRepresentation"));
-	SphereVisual->SetupAttachment(RootComponent);
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> SphereVisualAsset(TEXT("/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere"));
-	if (SphereVisualAsset.Succeeded())
+	UStaticMeshComponent* staticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualRepresentation"));
+	staticMesh->SetupAttachment(RootComponent);
+	if (MeshAsset.Succeeded())
 	{
 		//SphereVisual->SetStaticMesh(SphereVisualAsset.Object);
-		SphereVisual->SetStaticMesh(Asset);
+		staticMesh->SetStaticMesh(Asset);
+		//staticMesh->SetRelativeLocation(FVector(0.0f, 0.0f, 270.0f));
 
-		//SphereVisual->SetRelativeLocation(FVector(0.0f, 0.0f, 90.0f));
+		staticMesh->SetRelativeRotation(FRotator(0.0f, 90.0f, 0.0f));
 		//SphereVisual->SetWorldScale3D(FVector(0.8f));
 	}
-
 
 
 	// Use a spring arm to give the camera smooth, natural-feeling motion.

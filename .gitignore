@@ -76,3 +76,6 @@ DerivedDataCache/*
 *.log
 catkin_ws/build/*
 catkin_ws/devel/*
+
+robosub_unreal/Saved/Config/CrashReportClient/*
+robosub_unreal/Saved/Logs/robosub_unreal.log 
