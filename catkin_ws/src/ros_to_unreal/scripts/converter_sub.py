@@ -20,12 +20,9 @@ r = redis.Redis(
 class Redis_Converter():
     def __init__(self):
         self.sub = []
-        for topics in rospy.get_published_topics():
-            try:
-                exec("self.sub.append(rospy.Subscriber('%s',%s, self.topic_callback, callback_args='%s', queue_size=1))" % (topics[0],topics[1].split("/")[1],topics[0]))
-            except:
-                print("Topic type {0} does not exist".format(topics[1].split("/")[1]))
-    def topic_callback(self,msg,topic_name):
+        for topic in ["x_set","y_set","z_set","yaw_set","roll_set","pitch_set"]:
+            self.sub.append(rospy.Subscriber(rospy.get_param("~"+topic),Float64, self.set_callback, callback_args=topic, queue_size=1))
+    def set_callback(self,msg,topic_name):
         r.set(topic_name,msg)
 
 def main():
