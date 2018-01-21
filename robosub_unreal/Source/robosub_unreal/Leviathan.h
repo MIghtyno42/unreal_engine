@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-
+#include "cpp_redis\cpp_redis.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "Leviathan.generated.h"
@@ -47,4 +47,6 @@ private:
 	
 	FVector targetLinear;
 	FVector targetRotation;
+
+	cpp_redis::client redis_client;
 };
