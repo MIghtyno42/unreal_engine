@@ -1,31 +1,13 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build.
   Parsing headers for robosub_unrealEditor
     Running UnrealHeaderTool "D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\robosub_unreal.uproject" "D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\robosub_unrealEditor\Development\robosub_unrealEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for robosub_unrealEditor in 8.1701485 seconds
+  Reflection code generated for robosub_unrealEditor in 7.7626392 seconds
   Performing 4 actions (4 in parallel)
   Leviathan.gen.cpp
   Leviathan.cpp
-C:\Program Files (x86)\Windows Kits\8.1\include\um\winnt.h(536): warning C4005: 'TEXT': macro redefinition
-  c:\program files\epic games\ue_4.18\engine\source\runtime\core\public\HAL/Platform.h(848): note: see previous definition of 'TEXT'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\winnt.h(17005): warning C4668: '_APISET_RTLSUPPORT_VER' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\winnt.h(536): warning C4005: 'TEXT': macro redefinition
-  c:\program files\epic games\ue_4.18\engine\source\runtime\core\public\HAL/Platform.h(848): note: see previous definition of 'TEXT'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\winnt.h(17005): warning C4668: '_APISET_RTLSUPPORT_VER' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\interlockedapi.h(73): warning C4668: '_APISET_INTERLOCKED_VER' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\processthreadsapi.h(1170): warning C4668: '_WIN32_WINNT_WINTHRESHOLD' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\interlockedapi.h(73): warning C4668: '_APISET_INTERLOCKED_VER' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\securitybaseapi.h(357): warning C4668: '_APISET_SECURITYBASE_VER' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\securitybaseapi.h(472): warning C4668: '_APISET_SECURITYBASE_VER' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\securitybaseapi.h(1302): warning C4668: '_APISET_SECURITYBASE_VER' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\processthreadsapi.h(1170): warning C4668: '_WIN32_WINNT_WINTHRESHOLD' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\securitybaseapi.h(357): warning C4668: '_APISET_SECURITYBASE_VER' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\securitybaseapi.h(472): warning C4668: '_APISET_SECURITYBASE_VER' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\securitybaseapi.h(1302): warning C4668: '_APISET_SECURITYBASE_VER' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\winbase.h(8618): warning C4668: 'NTDDI_WIN7SP1' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
-C:\Program Files (x86)\Windows Kits\8.1\include\um\winbase.h(8618): warning C4668: 'NTDDI_WIN7SP1' is not defined as a preprocessor macro, replacing with '0' for '#if/#elif'
   [3/4] Link UE4Editor-robosub_unreal.dll
   [4/4] Link UE4Editor-robosub_unreal.lib
-     Creating library D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal.suppressed.lib and object D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal.suppressed.exp
      Creating library D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal.lib and object D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal.exp
+     Creating library D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal.suppressed.lib and object D:\Users\codsk_000\Documents\Unreal Projects\unreal_engine\robosub_unreal\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-robosub_unreal.suppressed.exp
   Deploying robosub_unrealEditor Win64 Development...
-  Total build time: 13.63 seconds (Local executor: 4.33 seconds)
+  Total build time: 10.25 seconds (Local executor: 1.42 seconds)

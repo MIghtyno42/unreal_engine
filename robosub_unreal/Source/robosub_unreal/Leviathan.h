@@ -1,17 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
-#include <cpp_redis/cpp_redis>
 #pragma once
 #include "CoreMinimal.h"
 #pragma once
 #include "GameFramework/Pawn.h"
 #pragma once
 #include "Leviathan.generated.h"
-
-#ifdef _WIN32
-#include <Winsock2.h>
-#endif /* _WIN32 */
 
 UCLASS()
 class ROBOSUB_UNREAL_API ALeviathan : public APawn
