@@ -21,7 +21,6 @@ ALeviathan::ALeviathan()
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh>MeshAsset(TEXT("StaticMesh'/Game/model/RobosubModel1.RobosubModel1'"));
 	UStaticMesh* Asset = MeshAsset.Object;
-
 	// Create and position a mesh component so we can see where our sphere is
 	UStaticMeshComponent* staticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualRepresentation"));
 	staticMesh->SetupAttachment(RootComponent);
@@ -66,12 +65,10 @@ void ALeviathan::Tick(float DeltaTime)
 	if (reset) {
 		FVector start(0);
 		SetActorLocation(start, false);
-		UE_LOG(LogTemp, Warning, TEXT("Robosub Reset"));
 		reset = false;
 	}
 	FVector newLocation = location;
 	if (targetLinear.X != location.X) {
-		UE_LOG(LogTemp, Warning, TEXT("Moving X %f"), movementSpeed * DeltaTime);
 		newLocation.X += movementSpeed * DeltaTime;
 	}
 

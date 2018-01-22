@@ -1,11 +1,13 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "Redis_Connector.h"
 #pragma once
 #include "CoreMinimal.h"
 #pragma once
 #include "GameFramework/Pawn.h"
 #pragma once
 #include "Leviathan.generated.h"
+
 
 UCLASS()
 class ROBOSUB_UNREAL_API ALeviathan : public APawn
@@ -48,4 +50,5 @@ private:
 	
 	FVector targetLinear;
 	FVector targetRotation;
+	Redis_Connector redis;
 };

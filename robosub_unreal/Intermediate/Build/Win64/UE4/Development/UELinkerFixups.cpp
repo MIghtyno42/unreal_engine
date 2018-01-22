@@ -458,6 +458,15 @@
 #ifndef ROBOSUB_UNREAL_API
 	#define ROBOSUB_UNREAL_API 
 #endif
+#ifndef NETWORKING_API
+	#define NETWORKING_API 
+#endif
+#ifndef SOCKETS_PACKAGE
+	#define SOCKETS_PACKAGE 1
+#endif
+#ifndef SOCKETS_API
+	#define SOCKETS_API 
+#endif
 #ifndef LOAD_PLUGINS_FOR_TARGET_PLATFORMS
 	#define LOAD_PLUGINS_FOR_TARGET_PLATFORMS 0
 #endif
@@ -481,15 +490,6 @@
 #endif
 #ifndef SANDBOXFILE_API
 	#define SANDBOXFILE_API 
-#endif
-#ifndef SOCKETS_PACKAGE
-	#define SOCKETS_PACKAGE 1
-#endif
-#ifndef SOCKETS_API
-	#define SOCKETS_API 
-#endif
-#ifndef NETWORKING_API
-	#define NETWORKING_API 
 #endif
 #ifndef NULLDRV_API
 	#define NULLDRV_API 

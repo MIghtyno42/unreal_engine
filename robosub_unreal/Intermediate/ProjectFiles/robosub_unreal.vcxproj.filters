@@ -1,51 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <None Include="..\..\robosub_unreal.uproject" />
-    <Filter Include="Source">
-      <UniqueIdentifier>{CE3D0042-59DE-43A8-A5F5-4AE099EFE4EC}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Source\robosub_unreal.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <None Include="..\..\Source\robosub_unrealEditor.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <Filter Include="Config">
-      <UniqueIdentifier>{3662206A-8B24-49C1-811D-4DAF575EC2A5}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Config\DefaultEditor.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultEngine.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultGame.ini">
-      <Filter>Config</Filter>
-    </None>
-    <Filter Include="Source\robosub_unreal">
-      <UniqueIdentifier>{B3BA93C4-718E-477F-87CF-F79D9CCDB891}</UniqueIdentifier>
-    </Filter>
-    <ClCompile Include="..\..\Source\robosub_unreal\Leviathan.cpp">
-      <Filter>Source\robosub_unreal</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\robosub_unreal\Leviathan.h">
-      <Filter>Source\robosub_unreal</Filter>
-    </ClInclude>
-    <None Include="..\..\Source\robosub_unreal\robosub_unreal.Build.cs">
-      <Filter>Source\robosub_unreal</Filter>
-    </None>
-    <ClCompile Include="..\..\Source\robosub_unreal\robosub_unreal.cpp">
-      <Filter>Source\robosub_unreal</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\robosub_unreal\robosub_unreal.h">
-      <Filter>Source\robosub_unreal</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\robosub_unreal\robosub_unrealGameModeBase.cpp">
-      <Filter>Source\robosub_unreal</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\robosub_unreal\robosub_unrealGameModeBase.h">
-      <Filter>Source\robosub_unreal</Filter>
-    </ClInclude>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\robosub_unreal.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{6C8DB3EC-B46E-4C83-9B8A-1830EA5E1787}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\robosub_unreal.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\robosub_unrealEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{E287F6DB-8B33-4DAD-882F-9D5DA388A3BA}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\robosub_unreal">
+			<UniqueIdentifier>{A475078A-E3A3-4B26-BE23-6396A30F2BE7}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\robosub_unreal\Leviathan.cpp">
+			<Filter>Source\robosub_unreal</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\robosub_unreal\Leviathan.h">
+			<Filter>Source\robosub_unreal</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\robosub_unreal\Redis_Connector.cpp">
+			<Filter>Source\robosub_unreal</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\robosub_unreal\Redis_Connector.h">
+			<Filter>Source\robosub_unreal</Filter>
+		</ClInclude >
+		<None Include="..\..\Source\robosub_unreal\robosub_unreal.Build.cs">
+			<Filter>Source\robosub_unreal</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\robosub_unreal\robosub_unreal.cpp">
+			<Filter>Source\robosub_unreal</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\robosub_unreal\robosub_unreal.h">
+			<Filter>Source\robosub_unreal</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\robosub_unreal\robosub_unrealGameModeBase.cpp">
+			<Filter>Source\robosub_unreal</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\robosub_unreal\robosub_unrealGameModeBase.h">
+			<Filter>Source\robosub_unreal</Filter>
+		</ClInclude >
+	</ItemGroup>
 </Project>

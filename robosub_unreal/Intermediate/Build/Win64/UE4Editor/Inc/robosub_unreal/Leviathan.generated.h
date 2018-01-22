@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ROBOSUB_UNREAL_Leviathan_generated_h
 
-#define robosub_unreal_Source_robosub_unreal_Leviathan_h_13_RPC_WRAPPERS
-#define robosub_unreal_Source_robosub_unreal_Leviathan_h_13_RPC_WRAPPERS_NO_PURE_DECLS
-#define robosub_unreal_Source_robosub_unreal_Leviathan_h_13_INCLASS_NO_PURE_DECLS \
+#define robosub_unreal_Source_robosub_unreal_Leviathan_h_15_RPC_WRAPPERS
+#define robosub_unreal_Source_robosub_unreal_Leviathan_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define robosub_unreal_Source_robosub_unreal_Leviathan_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesALeviathan(); \
 	friend ROBOSUB_UNREAL_API class UClass* Z_Construct_UClass_ALeviathan(); \
@@ -25,7 +25,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define robosub_unreal_Source_robosub_unreal_Leviathan_h_13_INCLASS \
+#define robosub_unreal_Source_robosub_unreal_Leviathan_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesALeviathan(); \
 	friend ROBOSUB_UNREAL_API class UClass* Z_Construct_UClass_ALeviathan(); \
@@ -35,7 +35,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define robosub_unreal_Source_robosub_unreal_Leviathan_h_13_STANDARD_CONSTRUCTORS \
+#define robosub_unreal_Source_robosub_unreal_Leviathan_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ALeviathan(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ALeviathan) \
@@ -48,7 +48,7 @@ private: \
 public:
 
 
-#define robosub_unreal_Source_robosub_unreal_Leviathan_h_13_ENHANCED_CONSTRUCTORS \
+#define robosub_unreal_Source_robosub_unreal_Leviathan_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ALeviathan(ALeviathan&&); \
@@ -59,26 +59,26 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ALeviathan); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ALeviathan)
 
 
-#define robosub_unreal_Source_robosub_unreal_Leviathan_h_13_PRIVATE_PROPERTY_OFFSET
-#define robosub_unreal_Source_robosub_unreal_Leviathan_h_10_PROLOG
-#define robosub_unreal_Source_robosub_unreal_Leviathan_h_13_GENERATED_BODY_LEGACY \
+#define robosub_unreal_Source_robosub_unreal_Leviathan_h_15_PRIVATE_PROPERTY_OFFSET
+#define robosub_unreal_Source_robosub_unreal_Leviathan_h_12_PROLOG
+#define robosub_unreal_Source_robosub_unreal_Leviathan_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	robosub_unreal_Source_robosub_unreal_Leviathan_h_13_PRIVATE_PROPERTY_OFFSET \
-	robosub_unreal_Source_robosub_unreal_Leviathan_h_13_RPC_WRAPPERS \
-	robosub_unreal_Source_robosub_unreal_Leviathan_h_13_INCLASS \
-	robosub_unreal_Source_robosub_unreal_Leviathan_h_13_STANDARD_CONSTRUCTORS \
+	robosub_unreal_Source_robosub_unreal_Leviathan_h_15_PRIVATE_PROPERTY_OFFSET \
+	robosub_unreal_Source_robosub_unreal_Leviathan_h_15_RPC_WRAPPERS \
+	robosub_unreal_Source_robosub_unreal_Leviathan_h_15_INCLASS \
+	robosub_unreal_Source_robosub_unreal_Leviathan_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define robosub_unreal_Source_robosub_unreal_Leviathan_h_13_GENERATED_BODY \
+#define robosub_unreal_Source_robosub_unreal_Leviathan_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	robosub_unreal_Source_robosub_unreal_Leviathan_h_13_PRIVATE_PROPERTY_OFFSET \
-	robosub_unreal_Source_robosub_unreal_Leviathan_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	robosub_unreal_Source_robosub_unreal_Leviathan_h_13_INCLASS_NO_PURE_DECLS \
-	robosub_unreal_Source_robosub_unreal_Leviathan_h_13_ENHANCED_CONSTRUCTORS \
+	robosub_unreal_Source_robosub_unreal_Leviathan_h_15_PRIVATE_PROPERTY_OFFSET \
+	robosub_unreal_Source_robosub_unreal_Leviathan_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	robosub_unreal_Source_robosub_unreal_Leviathan_h_15_INCLASS_NO_PURE_DECLS \
+	robosub_unreal_Source_robosub_unreal_Leviathan_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
