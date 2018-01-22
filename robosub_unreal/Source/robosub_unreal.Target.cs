@@ -9,6 +9,6 @@ public class robosub_unrealTarget : TargetRules
 	{
 		Type = TargetType.Game;
 
-		ExtraModuleNames.AddRange( new string[] { "robosub_unreal" } );
+		ExtraModuleNames.AddRange( new string[] { "robosub_unreal"} );
 	}
 }
