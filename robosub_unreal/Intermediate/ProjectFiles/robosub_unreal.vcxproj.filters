@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<<<<<<< HEAD
 	<ItemGroup>
 		<None Include="..\..\robosub_unreal.uproject" />
 		<Filter Include="Source">
@@ -50,3 +51,228 @@
 		</ClInclude >
 	</ItemGroup>
 </Project>
+=======
+  <ItemGroup>
+    <None Include="..\..\robosub_unreal.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{0BF67AA4-43E5-4E27-8F51-EA3526297CC5}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\robosub_unreal.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\robosub_unrealEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{8A801F0E-6A44-4241-A97F-09A9046FF7AF}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\robosub_unreal">
+      <UniqueIdentifier>{4C68857B-45A1-4A62-BAFF-289B4DC35C1B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\robosub_unreal\Leviathan.cpp">
+      <Filter>Source\robosub_unreal</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\robosub_unreal\Leviathan.h">
+      <Filter>Source\robosub_unreal</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\robosub_unreal\robosub_unreal.Build.cs">
+      <Filter>Source\robosub_unreal</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\robosub_unreal\robosub_unreal.cpp">
+      <Filter>Source\robosub_unreal</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\robosub_unreal\robosub_unreal.h">
+      <Filter>Source\robosub_unreal</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\robosub_unreal\robosub_unrealGameModeBase.cpp">
+      <Filter>Source\robosub_unreal</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\robosub_unreal\robosub_unrealGameModeBase.h">
+      <Filter>Source\robosub_unreal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\cpp_redis\builders\array_builder.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\builders\builders_factory.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\builders\builder_iface.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\builders\bulk_string_builder.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\builders\error_builder.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\builders\integer_builder.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\builders\reply_builder.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\builders\simple_string_builder.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\core\client.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\core\reply.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\core\sentinel.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\core\subscriber.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\helpers\variadic_template.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\misc\error.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\misc\logger.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\misc\macro.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\network\redis_connection.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\network\tcp_client.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\network\tcp_client_iface.hpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\tacopie\network\io_service.hpp">
+      <Filter>Source\tacopie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\tacopie\network\self_pipe.hpp">
+      <Filter>Source\tacopie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\tacopie\network\tcp_client.hpp">
+      <Filter>Source\tacopie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\tacopie\network\tcp_server.hpp">
+      <Filter>Source\tacopie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\tacopie\network\tcp_socket.hpp">
+      <Filter>Source\tacopie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\tacopie\utils\error.hpp">
+      <Filter>Source\tacopie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\tacopie\utils\logger.hpp">
+      <Filter>Source\tacopie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\tacopie\utils\thread_pool.hpp">
+      <Filter>Source\tacopie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\tacopie\utils\typedefs.hpp">
+      <Filter>Source\tacopie</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\cpp_redis\cpp_redis">
+      <Filter>Source\cpp_redis</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source\cpp_redis">
+      <UniqueIdentifier>{864dc9a9-dd41-4bf0-9265-f7b92b67e65d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\tacopie">
+      <UniqueIdentifier>{ac254816-eac3-4db4-9d12-aa48c672b964}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\cpp_redis\builders\array_builder.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\builders\builders_factory.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\builders\bulk_string_builder.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\builders\error_builder.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\builders\integer_builder.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\builders\reply_builder.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\builders\simple_string_builder.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\core\client.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\core\reply.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\core\sentinel.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\core\subscriber.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\misc\logger.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\network\redis_connection.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\cpp_redis\network\tcp_client.cpp">
+      <Filter>Source\cpp_redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\tacopie\network\common\tcp_socket.cpp">
+      <Filter>Source\tacopie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\tacopie\network\io_service.cpp">
+      <Filter>Source\tacopie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\tacopie\network\tcp_client.cpp">
+      <Filter>Source\tacopie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\tacopie\network\tcp_server.cpp">
+      <Filter>Source\tacopie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\tacopie\network\unix\unix_self_pipe.cpp">
+      <Filter>Source\tacopie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\tacopie\network\unix\unix_tcp_socket.cpp">
+      <Filter>Source\tacopie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\tacopie\network\windows\windows_self_pipe.cpp">
+      <Filter>Source\tacopie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\tacopie\network\windows\windows_tcp_socket.cpp">
+      <Filter>Source\tacopie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\tacopie\utils\error.cpp">
+      <Filter>Source\tacopie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\tacopie\utils\logger.cpp">
+      <Filter>Source\tacopie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\tacopie\utils\thread_pool.cpp">
+      <Filter>Source\tacopie</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
+>>>>>>> Creating stable commit
