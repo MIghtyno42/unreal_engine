@@ -53,7 +53,7 @@ ALeviathan::ALeviathan()
 void ALeviathan::BeginPlay()
 {
 	Super::BeginPlay();
-	targetLinear.X = 10;
+	targetLinear.X = 200;
 }
 
 

@@ -42,7 +42,7 @@ public:
 	void setYawTarget(float y);
 
 	UPROPERTY(EDITAnywhere, BlueprintReadWrite, Category = "Sub")
-	float movementSpeed = 1;
+	float movementSpeed = 100;
 
 private:
 	bool reset;

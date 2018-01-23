@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\robosub_unreal.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{6C8DB3EC-B46E-4C83-9B8A-1830EA5E1787}</UniqueIdentifier>
+			<UniqueIdentifier>{8FBD89CD-D0B7-444F-A476-654DC8A16A76}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\robosub_unreal.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{E287F6DB-8B33-4DAD-882F-9D5DA388A3BA}</UniqueIdentifier>
+			<UniqueIdentifier>{7B19829E-E335-4017-A8A2-C99EC4A1E4D5}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -25,7 +25,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\robosub_unreal">
-			<UniqueIdentifier>{A475078A-E3A3-4B26-BE23-6396A30F2BE7}</UniqueIdentifier>
+			<UniqueIdentifier>{0F25A6B4-8BED-4B77-91BC-D9A5E3C24DB8}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\robosub_unreal\Leviathan.cpp">
 			<Filter>Source\robosub_unreal</Filter>
