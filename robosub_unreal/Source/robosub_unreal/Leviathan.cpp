@@ -7,7 +7,6 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "UObject/ConstructorHelpers.h"
-
 // Sets default values
 ALeviathan::ALeviathan()
 {
@@ -66,35 +65,67 @@ void ALeviathan::Tick(float DeltaTime)
 		SetActorLocation(start, false);
 		reset = false;
 	}
+	//redis set update block
+	double xSet = redis.get_key(TEXT("x_set")) * 100;
+	double ySet = redis.get_key(TEXT("y_set")) * 100;
+	//x and y are the change in the sub frame locations
+	double x = -1 * (last_x - xSet);
+	double y = -1 * (last_y - ySet);
+	//if no change then don't update the targets
+	if (x  != 0 || y  != 0) {
+
+		double yaw = FMath::DegreesToRadians(rotation.Yaw);
+		//here is the change of frame
+		// when yaw == 0
+		// cos(0) = 1 sin(0) = 0 therefore  x=x y=y
+		// when yaw == 90 deg
+		// cos(90) = 0 sin(90) = 1 therefore x=y y=x
+		targetLinear.X += x * cos(yaw) + y * sin(yaw);
+		targetLinear.Y += x * sin(yaw) + y * cos(yaw);
+	}
+	last_x = xSet;
+	last_y = ySet;
+	
+	targetLinear.Z = redis.get_key(TEXT("z_set")) * 100;
+	targetRotation.Roll = FMath::RadiansToDegrees(redis.get_key(TEXT("roll_set")));
+	targetRotation.Pitch = FMath::RadiansToDegrees(redis.get_key(TEXT("pitch_set")));
+	targetRotation.Yaw = FMath::RadiansToDegrees(redis.get_key(TEXT("yaw_set")));
+
+	//Position update block
 	FVector newLocation = location;
 	FRotator newRotation = rotation;
-	
-	newLocation.X = updatePos(location.X, targetLinear.X, movementSpeed, DeltaTime);
-	newLocation.Y = updatePos(location.Y, targetLinear.Y, movementSpeed, DeltaTime);
-	newLocation.Z = updatePos(location.Z, targetLinear.Z, movementSpeed, DeltaTime);
 
-	newRotation.Roll = updatePos(rotation.Roll, targetRotation.Roll, 50.0f, DeltaTime);
-	newRotation.Pitch = updatePos(rotation.Pitch, targetRotation.Pitch, 50.0f, DeltaTime);
-	newRotation.Yaw = updatePos(rotation.Yaw, targetRotation.Yaw, 50.0f, DeltaTime);
+	newLocation.X += updatePos(location.X, targetLinear.X, movementSpeed, DeltaTime);
+	newLocation.Y += updatePos(location.Y, targetLinear.Y, movementSpeed, DeltaTime);
+	newLocation.Z += updatePos(location.Z, targetLinear.Z, movementSpeed, DeltaTime);
+
+	newRotation.Roll += updatePos(rotation.Roll, targetRotation.Roll, 50.0f, DeltaTime);
+	newRotation.Pitch += updatePos(rotation.Pitch, targetRotation.Pitch, 50.0f, DeltaTime);
+	newRotation.Yaw += updatePos(rotation.Yaw, targetRotation.Yaw, 50.0f, DeltaTime);
 
 	SetActorLocation(newLocation, true);
 	SetActorRotation(newRotation);
 	location = GetActorLocation();
 	rotation = GetActorRotation();
+
+	//redis position update block
+	
 }
 template <class T>
 T ALeviathan::updatePos(T current, T target, T movement_speed, float DeltaTime) {
+	//get sign for movement
 	int sign = 0;
 	if (current < target) sign = 1;
 	if (current > target) sign = -1;
 	
-	T newLocation = current + sign*movement_speed*DeltaTime;
+	T newLocation = sign*movement_speed*DeltaTime;
 
+	//check sign after movement
 	int after_sign = 0;
-	if (newLocation < target) after_sign = 1;
-	if (newLocation > target) after_sign = -1;
-
-	if (after_sign != sign) newLocation = target;
+	if (current+newLocation < target) after_sign = 1;
+	if (current+newLocation > target) after_sign = -1;
+	// if it changed we passed it and the movement should just be to set ourselves at the location
+	if (after_sign != sign) newLocation = -1*(current-target);
 	return newLocation;
 }
 

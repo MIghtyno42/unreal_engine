@@ -53,4 +53,6 @@ private:
 	Redis_Connector redis;
 	template<class T>
 	T updatePos(T current, T target, T movement_speed, float DeltaTime);
+	double last_x = 0;
+	double last_y = 0;
 };
