@@ -26,7 +26,7 @@ Redis_Connector::~Redis_Connector()
 {
 }
 
-int Redis_Connector::get_key(FString key) {
+double Redis_Connector::get_key(FString key) {
 	int32 BytesSent = 0;
 	FBufferArchive buffer;
 	FString serialized =TEXT("*2\r\n$3\r\nGET\r\n$")+FString::FromInt(key.Len())+TEXT("\r\n")+key+TEXT("\r\n");
@@ -48,10 +48,10 @@ int Redis_Connector::get_key(FString key) {
 	return FCString::Atof(*splitarray[1]);
 }
 
-int Redis_Connector::set_key(FString key, int set) {
+int Redis_Connector::set_key(FString key, double set) {
 	int32 BytesSent = 0;
 	FBufferArchive buffer;
-	FString set_value = FString::FromInt(set);
+	FString set_value = FString::SanitizeFloat(set);
 	FString serialized = TEXT("*3\r\n$3\r\nSET\r\n$") + FString::FromInt(key.Len()) + TEXT("\r\n") + key 
 		+ TEXT("\r\n$")+ FString::FromInt(set_value.Len()) + TEXT("\r\n") + set_value +TEXT("\r\n");
 	TCHAR *serializedChar = serialized.GetCharArray().GetData();

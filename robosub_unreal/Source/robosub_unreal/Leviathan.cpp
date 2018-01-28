@@ -53,7 +53,6 @@ ALeviathan::ALeviathan()
 void ALeviathan::BeginPlay()
 {
 	Super::BeginPlay();
-	targetLinear.X = 10;
 }
 
 
@@ -68,23 +67,35 @@ void ALeviathan::Tick(float DeltaTime)
 		reset = false;
 	}
 	FVector newLocation = location;
-	if (targetLinear.X != location.X) {
-		newLocation.X += movementSpeed * DeltaTime;
-	}
+	FRotator newRotation = rotation;
+	
+	newLocation.X = updatePos(location.X, targetLinear.X, movementSpeed, DeltaTime);
+	newLocation.Y = updatePos(location.Y, targetLinear.Y, movementSpeed, DeltaTime);
+	newLocation.Z = updatePos(location.Z, targetLinear.Z, movementSpeed, DeltaTime);
 
-	if (targetLinear.Y != location.Y) {
-		newLocation.Y += movementSpeed * DeltaTime;
-	}
+	newRotation.Roll = updatePos(rotation.Roll, targetRotation.Roll, 50.0f, DeltaTime);
+	newRotation.Pitch = updatePos(rotation.Pitch, targetRotation.Pitch, 50.0f, DeltaTime);
+	newRotation.Yaw = updatePos(rotation.Yaw, targetRotation.Yaw, 50.0f, DeltaTime);
 
-	if (targetLinear.Z != location.Z) {
-		newLocation.Z += movementSpeed * DeltaTime;
-	}
 	SetActorLocation(newLocation, true);
+	SetActorRotation(newRotation);
 	location = GetActorLocation();
-	//int xtarget = redis.get_key(TEXT("x_set"));
-	redis.set_key(TEXT("x_pos"), 1);
-	//UE_LOG(LogTemp, Warning,TEXT("got x target %d"),xtarget);
+	rotation = GetActorRotation();
+}
+template <class T>
+T ALeviathan::updatePos(T current, T target, T movement_speed, float DeltaTime) {
+	int sign = 0;
+	if (current < target) sign = 1;
+	if (current > target) sign = -1;
+	
+	T newLocation = current + sign*movement_speed*DeltaTime;
 
+	int after_sign = 0;
+	if (newLocation < target) after_sign = 1;
+	if (newLocation > target) after_sign = -1;
+
+	if (after_sign != sign) newLocation = target;
+	return newLocation;
 }
 
 void ALeviathan::tripReset() {
@@ -106,11 +117,11 @@ void ALeviathan::setZTarget(float z) {
 }
 
 void ALeviathan::setRollTarget(float r) {
-	targetRotation.X = r;
+	targetRotation.Roll = r;
 }
 void ALeviathan::setPitchTarget(float p) {
-	targetRotation.Y = p;
+	targetRotation.Pitch = p;
 }
 void ALeviathan::setYawTarget(float y) {
-	targetRotation.Z = y;
+	targetRotation.Yaw = y;
 }

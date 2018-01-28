@@ -13,8 +13,8 @@ class ROBOSUB_UNREAL_API Redis_Connector
 public:
 	Redis_Connector();
 	~Redis_Connector();
-	int get_key(FString key);
-	int set_key(FString key, int set);
+	double get_key(FString key);
+	int set_key(FString key, double set);
 private:
 	int parseReturnString(char * s);
 	FSocket* ConnectionSocket;

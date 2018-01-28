@@ -42,13 +42,15 @@ public:
 	void setYawTarget(float y);
 
 	UPROPERTY(EDITAnywhere, BlueprintReadWrite, Category = "Sub")
-	float movementSpeed = 1;
+	float movementSpeed = 100;
 
 private:
 	bool reset;
 	FVector location;
-	
+	FRotator rotation;
 	FVector targetLinear;
-	FVector targetRotation;
+	FRotator targetRotation;
 	Redis_Connector redis;
+	template<class T>
+	T updatePos(T current, T target, T movement_speed, float DeltaTime);
 };
