@@ -18,8 +18,10 @@ class Redis_Converter():
         self.sub = []
         for topic in ["x_set","y_set","z_set","yaw_set","roll_set","pitch_set"]:
             self.sub.append(rospy.Subscriber(rospy.get_param("~"+topic),Float64, self.set_callback, callback_args=topic, queue_size=1))
+            r.set(topic,0)
+
     def set_callback(self,msg,topic_name):
-        r.set(topic_name,msg)
+        r.set(topic_name,msg.data)
 
 def main():
     rospy.init_node('Redis_Converter')
