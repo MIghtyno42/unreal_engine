@@ -53,7 +53,7 @@ ALeviathan::ALeviathan()
 void ALeviathan::BeginPlay()
 {
 	Super::BeginPlay();
-	targetLinear.X = 200;
+	targetLinear.X = 10;
 }
 
 
@@ -81,6 +81,10 @@ void ALeviathan::Tick(float DeltaTime)
 	}
 	SetActorLocation(newLocation, true);
 	location = GetActorLocation();
+	//int xtarget = redis.get_key(TEXT("x_set"));
+	redis.set_key(TEXT("x_pos"), 1);
+	//UE_LOG(LogTemp, Warning,TEXT("got x target %d"),xtarget);
+
 }
 
 void ALeviathan::tripReset() {
