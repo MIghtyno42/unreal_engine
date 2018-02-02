@@ -4,6 +4,8 @@
 
 Redis_Connector::Redis_Connector()
 {
+	
+	lastCheck = FDateTime::UtcNow();
 	UE_LOG(LogTemp, Warning, TEXT("Setting Up Redis Connection"));
 	FIPv4Address ip;
 	ip = FIPv4Address(127, 0, 0, 1);
@@ -11,22 +13,49 @@ Redis_Connector::Redis_Connector()
 	addr->SetIp(ip.Value);
 	addr->SetPort(6379);
 	ConnectionSocket = FTcpSocketBuilder("Redis_Socket").AsBlocking();
-	bool connected = ConnectionSocket->Connect(*addr);
+	connected = ConnectionSocket->Connect(*addr);
 	if (connected) {
 		UE_LOG(LogTemp, Warning, TEXT("Connected!"));
 	}
 	else {
 		UE_LOG(LogTemp, Warning, TEXT("NOT Connected!"));
-
 	}
-	
 }
 
 Redis_Connector::~Redis_Connector()
 {
 }
 
+bool Redis_Connector::connect() {
+	if (connected) return connected;
+	FDateTime now =FDateTime::UtcNow();
+	int64 duration = now.ToUnixTimestamp() - lastCheck.ToUnixTimestamp();
+	if (duration < 10)
+	{
+		//UE_LOG(LogTemp, Warning, TEXT("Waiting 10 seconds before checking for redis again: Time since last check %d"), duration);
+		return false;
+	}
+	lastCheck = FDateTime::UtcNow();
+	UE_LOG(LogTemp, Warning, TEXT("Setting Up Redis Connection"));
+	FIPv4Address ip;
+	ip = FIPv4Address(127, 0, 0, 1);
+	TSharedRef<FInternetAddr> addr = ISocketSubsystem::Get(PLATFORM_SOCKETSUBSYSTEM)->CreateInternetAddr();
+	addr->SetIp(ip.Value);
+	addr->SetPort(6379);
+	ConnectionSocket = FTcpSocketBuilder("Redis_Socket").AsBlocking();
+	connected = ConnectionSocket->Connect(*addr);
+	if (connected) {
+		UE_LOG(LogTemp, Warning, TEXT("Connected!"));
+	}
+	else {
+		UE_LOG(LogTemp, Warning, TEXT("NOT Connected!"));
+	}
+	return connected;
+}
+
 double Redis_Connector::get_key(FString key) {
+	//first check if we are connected
+	if (!connect()) return 0.0;
 	int32 BytesSent = 0;
 	FBufferArchive buffer;
 	FString serialized =TEXT("*2\r\n$3\r\nGET\r\n$")+FString::FromInt(key.Len())+TEXT("\r\n")+key+TEXT("\r\n");
@@ -49,6 +78,8 @@ double Redis_Connector::get_key(FString key) {
 }
 
 int Redis_Connector::set_key(FString key, double set) {
+	//first check if we are connected
+	if (!connect()) return 1;
 	int32 BytesSent = 0;
 	FBufferArchive buffer;
 	FString set_value = FString::SanitizeFloat(set);

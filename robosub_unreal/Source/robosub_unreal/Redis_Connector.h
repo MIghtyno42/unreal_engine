@@ -16,8 +16,11 @@ public:
 	double get_key(FString key);
 	int set_key(FString key, double set);
 private:
+	bool connect();
+	bool connected = false;
 	int parseReturnString(char * s);
 	FSocket* ConnectionSocket;
 	FIPv4Endpoint RemoteAddressForConnection;
+	FDateTime lastCheck;
 
 };
