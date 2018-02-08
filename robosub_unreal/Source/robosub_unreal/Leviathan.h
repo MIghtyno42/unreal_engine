@@ -29,9 +29,13 @@ public:
 	// Called to bind functionality to input
 	//virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// Called to reset the actor
+	UFUNCTION(BlueprintCallable, Category ="Sub")
 	void tripReset();
 	// Called to get the current Location of the actor
+	UFUNCTION(BlueprintCallable, Category = "Sub")
 	FVector getLocation();
+	UFUNCTION(BlueprintCallable, Category = "Sub")
+	FRotator getRotation();
 	//Functions to set X,Y,Z targets
 	void setXTarget(float x);
 	void setYTarget(float y);

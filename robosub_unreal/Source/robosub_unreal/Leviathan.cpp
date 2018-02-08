@@ -63,6 +63,8 @@ void ALeviathan::Tick(float DeltaTime)
 	if (reset) {
 		FVector start(0);
 		SetActorLocation(start, false);
+		FRotator startRot(0);
+		SetActorRotation(startRot);
 		reset = false;
 	}
 	//redis set update block
@@ -135,6 +137,10 @@ void ALeviathan::tripReset() {
 
 FVector ALeviathan::getLocation() {
 	return location;
+}
+
+FRotator ALeviathan::getRotation() {
+	return rotation;
 }
 
 void ALeviathan::setXTarget(float x) {
