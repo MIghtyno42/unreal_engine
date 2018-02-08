@@ -52,6 +52,7 @@ private:
 	bool reset;
 	FVector location;
 	FRotator rotation;
+
 	FVector targetLinear;
 	FRotator targetRotation;
 	Redis_Connector redis;

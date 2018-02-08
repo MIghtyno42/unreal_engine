@@ -96,22 +96,45 @@ void ALeviathan::Tick(float DeltaTime)
 	//Position update block
 	FVector newLocation = location;
 	FRotator newRotation = rotation;
+	double x_vel = updatePos(location.X, targetLinear.X, movementSpeed, DeltaTime);
+	double y_vel = updatePos(location.Y, targetLinear.Y, movementSpeed, DeltaTime);
+	double z_vel = updatePos(location.Z, targetLinear.Z, movementSpeed, DeltaTime);
 
-	newLocation.X += updatePos(location.X, targetLinear.X, movementSpeed, DeltaTime);
-	newLocation.Y += updatePos(location.Y, targetLinear.Y, movementSpeed, DeltaTime);
-	newLocation.Z += updatePos(location.Z, targetLinear.Z, movementSpeed, DeltaTime);
+	newLocation.X += x_vel;
+	newLocation.Y += y_vel;
+	newLocation.Z += z_vel;
 
-	newRotation.Roll += updatePos(rotation.Roll, targetRotation.Roll, 50.0f, DeltaTime);
-	newRotation.Pitch += updatePos(rotation.Pitch, targetRotation.Pitch, 50.0f, DeltaTime);
-	newRotation.Yaw += updatePos(rotation.Yaw, targetRotation.Yaw, 50.0f, DeltaTime);
+	double roll_vel = updatePos(rotation.Roll, targetRotation.Roll, 50.0f, DeltaTime);
+	double pitch_vel = updatePos(rotation.Pitch, targetRotation.Pitch, 50.0f, DeltaTime);
+	double yaw_vel = updatePos(rotation.Yaw, targetRotation.Yaw, 50.0f, DeltaTime);
+
+	newRotation.Roll += roll_vel;
+	newRotation.Pitch += pitch_vel;
+	newRotation.Yaw += yaw_vel;
 
 	SetActorLocation(newLocation, true);
 	SetActorRotation(newRotation);
 	location = GetActorLocation();
 	rotation = GetActorRotation();
-
-	//redis position update block
 	
+	//redis position update block
+
+	redis.set_key("x_pos", location.X/100);
+	redis.set_key("y_pos", location.Y/100);
+	redis.set_key("z_pos", location.Z/100);
+
+	redis.set_key("x_vel", x_vel / 100);
+	redis.set_key("y_vel", y_vel / 100);
+	redis.set_key("z_vel", z_vel / 100);
+
+	redis.set_key("roll_pos", rotation.Roll);
+	redis.set_key("pitch_pos", rotation.Pitch);
+	redis.set_key("yaw_pos", rotation.Yaw);
+	
+	redis.set_key("roll_vel", roll_vel);
+	redis.set_key("pitch_vel", pitch_vel);
+	redis.set_key("yaw_vel", yaw_vel);
+
 }
 template <class T>
 T ALeviathan::updatePos(T current, T target, T movement_speed, float DeltaTime) {
