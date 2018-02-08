@@ -7,7 +7,7 @@
         <param name="roll_set" value="/local_control/pid/roll/set" />
         <param name="pitch_set" value="/local_control/pid/pitch/set" />
     </node>
-    <!--node name="converter_pub" pkg="ros_to_unreal" type="converter_pub.py" >
+    <node name="converter_pub" pkg="ros_to_unreal" type="converter_pub.py" >
         <param name="odometry" value="/odometry/filtered" />
-    </node-->
+    </node>
 </launch>

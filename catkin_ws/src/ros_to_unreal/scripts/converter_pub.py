@@ -16,7 +16,8 @@ r = redis.Redis(
 class Redis_Converter():
     def __init__(self):
         self.pub = rospy.Publisher(rospy.get_param("~odometry"),Odometry,queue_size=1)
-
+        for x in ['x_pos','y_pos','z_pos','x_vel','y_vel','z_vel','roll_pos','pitch_pos','yaw_pos','roll_vel','pitch_vel','yaw_vel']:
+            r.set(x,0)
 
     def update_ros(self):
         odom = Odometry()
