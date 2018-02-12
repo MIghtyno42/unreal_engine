@@ -7,7 +7,10 @@ import tf
 import time
 import numpy as np
 from nav_msgs.msg import Odometry
+import cv2
 import redis
+from sensor_msgs.msg import Image
+from cv_bridge import CvBridge, CvBridgeError
 
 r = redis.Redis(
     host='localhost',
@@ -16,6 +19,8 @@ r = redis.Redis(
 class Redis_Converter():
     def __init__(self):
         self.pub = rospy.Publisher(rospy.get_param("~odometry"),Odometry,queue_size=1)
+        self.image_pub = rospy.Publisher("image_topic_2",Image,queue_size=1)
+        self.bridge = CvBridge()
         for x in ['x_pos','y_pos','z_pos','x_vel','y_vel','z_vel','roll_pos','pitch_pos','yaw_pos','roll_vel','pitch_vel','yaw_vel']:
             r.set(x,0)
 
@@ -41,6 +46,32 @@ class Redis_Converter():
         odom.twist.twist.angular.z = float(r.get("yaw_vel"))
         odom.header.stamp = rospy.get_rostime()
         self.pub.publish(odom)
+
+        red_temp = r.get('camera2_red').split(',')
+        red_temp.pop()
+        green_temp = r.get('camera2_green').split(',')
+        green_temp.pop()
+        blue_temp = r.get('camera2_blue').split(',')
+        blue_temp.pop()
+
+
+        red = [int(s) for s in red_temp]
+        green = [int(s) for s in green_temp]
+        blue = [int(s) for s in blue_temp]
+        # rospy.logerr("Red {0}, Green {1}, Blue {2}".format(len(red),len(green),len(blue)))
+
+
+        image = np.zeros((512,512,3), dtype='uint8')
+
+        for i in range(0,512):
+            for j in range(0,512):
+                k = i*512+j
+                image[i,j,2] = red[k]
+                image[i,j,1] = green[k]
+                image[i,j,0] = blue[k]
+
+        self.image_pub.publish(self.bridge.cv2_to_imgmsg(image, "bgr8"))
+
 
 
 def main():
