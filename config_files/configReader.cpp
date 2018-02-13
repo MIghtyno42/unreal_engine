@@ -1,13 +1,12 @@
 #include <fstream>
 #include <iostream>
-#include <json.hpp>
+#include <C:\Users\Michael\Desktop\json.hpp>
 #include <string>
 
 using namespace std;
 
 /*
 This is the .cpp class. It is made to read the .json config file and retrieve values from it.
-
 */
 
 class ConfigParser {
@@ -33,3 +32,14 @@ string ConfigParser::get_category(char* categoryname) {
 }
 
 
+/*
+int main() {
+	ConfigParser x = ConfigParser("example.json");
+
+	
+	ofstream log;
+	log.open("log.txt");
+	log << x.get_category("address");
+	log.close();
+}
+*/
