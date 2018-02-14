@@ -19,10 +19,12 @@ r = redis.Redis(
 class Redis_Converter():
     def __init__(self):
         self.pub = rospy.Publisher(rospy.get_param("~odometry"),Odometry,queue_size=1)
-        self.image_pub = rospy.Publisher("image_topic_2",Image,queue_size=1)
+        self.image_pub = rospy.Publisher("image_simulator",Image,queue_size=1)
         self.bridge = CvBridge()
-        for x in ['x_pos','y_pos','z_pos','x_vel','y_vel','z_vel','roll_pos','pitch_pos','yaw_pos','roll_vel','pitch_vel','yaw_vel']:
+        for x in ['x_pos','y_pos','z_pos','x_vel','y_vel','z_vel','roll_pos','pitch_pos','yaw_pos','roll_vel','pitch_vel','yaw_vel','image_block']:
             r.set(x,0)
+        for x in ['camera2_red','camera2_green','camera2_blue']:
+            r.set(x,"1,1,")
 
     def update_ros(self):
         odom = Odometry()
@@ -53,19 +55,22 @@ class Redis_Converter():
         green_temp.pop()
         blue_temp = r.get('camera2_blue').split(',')
         blue_temp.pop()
-
+        if(float(r.get('image_block'))==0):
+            # rospy.logerr("image_block set")
+            return
+        rospy.logerr("image_block not set")
 
         red = [int(s) for s in red_temp]
         green = [int(s) for s in green_temp]
         blue = [int(s) for s in blue_temp]
         # rospy.logerr("Red {0}, Green {1}, Blue {2}".format(len(red),len(green),len(blue)))
+        n = int(np.sqrt(len(red)))
 
+        image = np.zeros((n,n,3), dtype='uint8')
 
-        image = np.zeros((512,512,3), dtype='uint8')
-
-        for i in range(0,512):
-            for j in range(0,512):
-                k = i*512+j
+        for i in range(0,n):
+            for j in range(0,n):
+                k = i*n+j
                 image[i,j,2] = red[k]
                 image[i,j,1] = green[k]
                 image[i,j,0] = blue[k]
