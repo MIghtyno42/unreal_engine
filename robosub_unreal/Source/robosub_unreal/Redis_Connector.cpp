@@ -8,7 +8,7 @@ Redis_Connector::Redis_Connector()
 	lastCheck = FDateTime::UtcNow();
 	UE_LOG(LogTemp, Warning, TEXT("Setting Up Redis Connection"));
 	FIPv4Address ip;
-	ip = FIPv4Address(192, 168, 0, 112);
+	ip = FIPv4Address(127, 0, 0, 1);
 	TSharedRef<FInternetAddr> addr = ISocketSubsystem::Get(PLATFORM_SOCKETSUBSYSTEM)->CreateInternetAddr();
 	addr->SetIp(ip.Value);
 	addr->SetPort(6379);
