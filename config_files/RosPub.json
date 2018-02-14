@@ -10,5 +10,6 @@
   "yaw_pos": "",
   "roll_vel": "",
   "pitch_vel": "",
-  "yaw_vel": ""
+  "yaw_vel": "",
+  "image_block"
 }
