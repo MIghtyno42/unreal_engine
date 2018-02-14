@@ -15,6 +15,7 @@ public:
 	~Redis_Connector();
 	double get_key(FString key);
 	int set_key(FString key, double set);
+	int set_key_string(FString key, FString set);
 private:
 	bool connect();
 	bool connected = false;

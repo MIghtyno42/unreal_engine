@@ -1,5 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "Runtime/Engine/Classes/Components/SceneCaptureComponent2D.h"
+#include "Runtime/Engine/Classes/Engine/TextureRenderTarget2D.h"
+#include "Runtime/Engine/Classes/Engine/Texture2D.h"
 #include "Redis_Connector.h"
 #pragma once
 #include "CoreMinimal.h"
@@ -52,7 +55,6 @@ private:
 	bool reset;
 	FVector location;
 	FRotator rotation;
-
 	FVector targetLinear;
 	FRotator targetRotation;
 	Redis_Connector redis;
@@ -60,4 +62,10 @@ private:
 	T updatePos(T current, T target, T movement_speed, float DeltaTime);
 	double last_x = 0;
 	double last_y = 0;
+	USceneCaptureComponent2D *Camera2;
+	UTextureRenderTarget2D *RenderTarget;
+	UTexture2D *Texture2D;
+	void captureCamera();
+	int image_counter;
+
 };

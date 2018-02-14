@@ -42,24 +42,88 @@ ALeviathan::ALeviathan()
 	SpringArm->bEnableCameraLag = true;
 	SpringArm->CameraLagSpeed = 3.0f;
 
+	USpringArmComponent* SpringArm2 = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraAttachmentArm2"));
+	SpringArm2->SetupAttachment(RootComponent);
+	SpringArm2->RelativeRotation = FRotator(-90.0f, 90.0f, 0.0f);
+	SpringArm2->TargetArmLength = 200.0f;
+
 	// Create a camera and attach to our spring arm
 	UCameraComponent* Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("ActualCamera"));
 	Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
 	reset = true;
-}
 
+
+	Camera2 = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("Camera_Test"));
+	Camera2->SetupAttachment(SpringArm2, USpringArmComponent::SocketName);
+	Camera2->SetRelativeRotation(FRotator(180.0f, 90.0f, 90.0f));
+	ConstructorHelpers::FObjectFinder<UTextureRenderTarget2D> RenderTargetAsset(TEXT("TextureRenderTarget2D'/Game/RenderTarget.RenderTarget'"));
+	//here you need to have prepared MyLittleRenderTarget asset, type RenderTarget2D. You can have one for many actors, it is duplicated. What is not resolved by me: i don't know if it is stable solution or it will make crash after many calls
+
+	RenderTarget = DuplicateObject(RenderTargetAsset.Object, NULL);
+	//RenderTarget = RenderTargetAsset.Object;
+	RenderTarget->InitAutoFormat(1024, 1024);
+	//RenderTarget->OverrideFormat = PF_B8G8R8A8;
+	Camera2->TextureTarget = RenderTarget;
+	image_counter = 999;
+}
+	
 // Called when the game starts or when spawned
 void ALeviathan::BeginPlay()
 {
 	Super::BeginPlay();
+	captureCamera();
 }
 
+void ALeviathan::captureCamera() {
+	Camera2->TextureTarget = RenderTarget;
 
+	int X = RenderTarget->GetSurfaceHeight();
+	int Y = RenderTarget->GetSurfaceWidth();
+	Texture2D = RenderTarget->ConstructTexture2D(this, FString("Tex2D"), EObjectFlags::RF_NoFlags, EConstructTextureFlags::CTF_DeferCompression);
+	FTexturePlatformData *Data = Texture2D->PlatformData;
+	EPixelFormat Format = Data->PixelFormat;
+	UE_LOG(LogTemp, Warning, TEXT("Pixel Format: %d"), (uint8)(Format));
+
+
+	FColor* FormatedImageData = static_cast<FColor*>(Texture2D->PlatformData->Mips[0].BulkData.Lock(LOCK_READ_ONLY));
+
+	FColor PixelColor;
+	FString red = TEXT("");
+	FString blue = TEXT("");
+	FString green = TEXT("");
+
+
+	for (int i = 0; i < X; i++) {
+		for (int j = 0; j < Y; j++) {
+			PixelColor = FormatedImageData[i * X + j];
+			red += FString::FromInt(PixelColor.R) + TEXT(",");
+			//red += FString::FromInt(0) + TEXT(",");
+			blue += FString::FromInt(PixelColor.B) + TEXT(",");
+			green += FString::FromInt(PixelColor.G) + TEXT(",");
+		}
+	}
+	redis.set_key(TEXT("image_block"), 0);
+	redis.set_key_string(TEXT("camera2_red"), red);
+	redis.set_key_string(TEXT("camera2_green"), green);
+	redis.set_key_string(TEXT("camera2_blue"), blue);
+	redis.set_key(TEXT("image_block"), 1);
+	Texture2D->PlatformData->Mips[0].BulkData.Unlock();
+}
 
 // Called every frame
 void ALeviathan::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	image_counter++;
+	if (image_counter > 10)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Sending Image"));
+		captureCamera();
+		UE_LOG(LogTemp, Warning, TEXT("Sending Image Done"));
+
+		image_counter = 0;
+	}
+
 	if (reset) {
 		FVector start(0);
 		SetActorLocation(start, false);
